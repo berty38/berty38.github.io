@@ -1,0 +1,280 @@
+<html>
+<head>
+<script type="text/javascript">
+
+var items=new Array(9);
+var username="New User";
+
+function addToCart(item, quantity) {
+    items[item]=eval(items[item])+eval(quantity);
+    updateTotals();
+}
+
+function purgeCart() {
+    for (i=0; i<items.length; i++) {
+        items[i]=0;
+    }
+    updateTotals();
+}
+
+function validateEmail(email, msg, optional) {
+	if (!email.value && optional) {
+		return true;
+	}
+	var re_mail = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z])+$/;
+        if (!re_mail.test(email.value)) {
+		alert(msg);
+		email.focus();
+		email.select();
+		return false;
+	}
+	return true;
+}
+
+function updateTotals() {
+    var list = "";
+    if (eval(items[0])>0) {
+        list+="Mushroom x "+items[0]+" = "+eval(items[0])*20+" coins\n";
+    }
+    if (eval(items[1])>0) {
+        list+="Fireflower x "+items[1]+ " = "+eval(items[1])*30+" coins\n";
+    }
+    if (eval(items[2])>0) {
+        list+="Leaf x "+items[2]+ " = "+eval(items[2])*40+" coins\n";
+    }
+    if (eval(items[3])>0) {
+        list+="Frog x "+items[3]+ " = "+eval(items[3])*65+" coins\n";
+    }
+    if (eval(items[4])>0) {
+        list+="Tanooki x "+items[4]+ " = "+eval(items[4])*70+" coins\n";
+    }
+    if (eval(items[5])>0) {
+        list+="Hammer x "+items[5]+ " = "+eval(items[5])*70+" coins\n";
+    }
+    if (eval(items[6])>0) {
+        list+="1-Up x "+items[6]+ " = "+eval(items[6])*75+" coins\n";
+    }
+    if (eval(items[7])>0) {
+        list+="P-Wing x "+items[7]+ " = "+eval(items[7])*95+" coins\n";
+    }
+    if (eval(items[8])>0) {
+        list+="Whistle x "+items[8]+ " = "+eval(items[8])*200+" coins\n";
+    }
+    window.document.cart.itemized.value=list;
+    
+    var st = eval(items[0])*20+eval(items[1])*30+eval(items[2])*40+eval(items[3])*65+
+        eval(items[4])*70+eval(items[5])*70+eval(items[6])*75+eval(items[7])*95+eval(items[8])*200;
+        
+    window.document.cart.subtotal.value=st + " coins";
+    window.document.cart.total.value=Math.round(st*1.05) + " coins";
+}
+
+function checkout() {
+    var str="<html><head><table align='center'><tr><td align='center'><img src='mariopics/starcard.gif'>\n";
+    str+="<img src='mariopics/mushroomcard.gif'><img src='mariopics/flowercard.gif'></table>\n";
+    str+="<title>Discount Mushroom House!</title></head><body><h1>Your Receipt</h1>\n";
+    str+="<body bgcolor='red' text='white' link='blue' vlink='green'>\n";
+    
+    var list = "";
+    if (eval(items[0])>0) {
+        list+="Mushroom x "+items[0]+" = "+eval(items[0])*20+" coins<br>\n";
+    }
+    if (eval(items[1])>0) {
+        list+="Fireflower x "+items[1]+ " = "+eval(items[1])*30+" coins<br>\n";
+    }
+    if (eval(items[2])>0) {
+        list+="Leaf x "+items[2]+ " = "+eval(items[2])*40+" coins<br>\n";
+    }
+    if (eval(items[3])>0) {
+        list+="Frog x "+items[3]+ " = "+eval(items[3])*65+" coins<br>\n";
+    }
+    if (eval(items[4])>0) {
+        list+="Tanooki x "+items[4]+ " = "+eval(items[4])*70+" coins<br>\n";
+    }
+    if (eval(items[5])>0) {
+        list+="Hammer x "+items[5]+ " = "+eval(items[5])*70+" coins<br>\n";
+    }
+    if (eval(items[6])>0) {
+        list+="1-Up x "+items[6]+ " = "+eval(items[6])*75+" coins<br>\n";
+    }
+    if (eval(items[7])>0) {
+        list+="P-Wing x "+items[7]+ " = "+eval(items[7])*95+" coins<br>\n";
+    }
+    if (eval(items[8])>0) {
+        list+="Whistle x "+items[8]+ " = "+eval(items[8])*200+" coins<br>\n";
+    }
+      
+    var st = eval(items[0])*20+eval(items[1])*30+eval(items[2])*40+eval(items[3])*65+
+        eval(items[4])*70+eval(items[5])*70+eval(items[6])*75+eval(items[7])*95+eval(items[8])*200;
+    str+=username+" ordered:<br><br>"+list+"----------------<br>Subtotal: "+st;
+    str+=" coins<br>+ 5% Bowser Tax: "+Math.round(st*0.05)+"<br>Total: "+Math.round(st*1.05);
+    str+="<br><br><a href='./mario.html'>Back to store.</a></body></html>";
+    location.href="http://www.berthuang.com";
+    window.document.write(str);
+    
+
+}
+
+purgeCart();
+updateTotals();
+</script>
+
+
+
+<table align="center"><tr><td align="center">
+<img src='mariopics/starcard.gif'>
+<img src='mariopics/mushroomcard.gif'>
+<img src='mariopics/flowercard.gif'>
+</table>
+<title>Discount Mushroom House!</title>
+</head><body><h1>Welcome to the Mushroom House!</h1><body bgcolor="red" text="white" link="blue" vlink="green">
+
+<table width=60% border = "1" align="center">
+<tr valign="center">
+
+<td align="left">
+<form name="cart">Your Shopping Cart:
+<br>
+<textarea name="itemized" rows="9" cols="25" readonly="readonly"></textarea>
+<br>Subtotal:    <input name="subtotal" type="text" size="10" readonly="readonly" value="0 coins">
+<br> + 5% Bowser tax = <input name="total" type="text" size="10" readonly="readonly" value="0 coins">
+<input type="button" onClick="purgeCart()" value="Empty Shopping Cart">
+</form>
+</td>
+</tr>
+<tr><td align="center">
+<form>Email Address: <input type="text" name="address" size=25 onKeyUp="username=value;">
+<input type="button" onClick="if (validateEmail(address, 'Please enter a valid email address', 0)) checkout();" 
+value="Checkout">
+</form>
+</td>
+</tr>
+</table>
+
+<table width=85% border = "1" align="center">
+<tr valign="center">
+
+<td align="center" width=33%>
+<img name="mushroom" height=64 width=65 src="mariopics/mushroom.gif" 
+onMouseOver="document.mushroom.src='mariopics/bigmariojump.gif'; return true;"
+onMouseOut="document.mushroom.src='mariopics/mushroom.gif'; return true;"><br>
+<b>Mushroom</b><br>
+Absorbing a mushroom makes Mario big, and allow him to be able to survive one hit.<br><br>
+20 coins. 
+<form>
+<input type="int" name="q" value=1 size=3 maxlength=3>
+<input type="button" onClick="addToCart(0, q.value)" value="Add To Cart">
+<br></form>
+</td>
+
+<td align="center" width=33%>
+<img name="fireflower" src="mariopics/flower.gif" height="64"
+onMouseOver="document.fireflower.src='mariopics/firemario.gif'; return true;"
+onMouseOut="document.fireflower.src='mariopics/flower.gif'; return true;"><br>
+<b>Fireflower</b><br>
+Absorbing a fireflower gives Mario the ability to launch fireballs from his fingers. <br><br>
+30 coins.
+<form>
+<input type="text" name="q" value="1" size=3 maxlength=3>
+<input type="button" onClick="addToCart(1, q.value)" value="Add To Cart">
+<br></form>
+</td>
+
+<td align="center" width=33%>
+<img name="leaf" src="mariopics/leaf.gif" height="64"
+onMouseOver="document.leaf.src='mariopics/racoon1.gif'; return true;"
+onMouseOut="document.leaf.src='mariopics/leaf.gif'; return true;"><br>
+<b>Leaf/Raccoon Suit</b><br>
+Absorbing a leaf turns Mario into Raccoon Mario, which allows him to attack enemies with his raccoon tail. It also gives Mario the ability to fly for a short distance, when running at top speed.<br><br>
+40 coins.
+<form>
+<input type="text" name="q" value="1" size=3 maxlength=3>
+<input type="button" onClick="addToCart(2, q.value)" value="Add To Cart">
+<br></form>
+</td></tr>
+
+<tr>
+<td align="center" width=33%>
+<img name="frog" src="mariopics/frog.gif" height="64"
+onMouseOver="document.frog.src='mariopics/frogsuitmario.gif'; return true;"
+onMouseOut="document.frog.src='mariopics/frog.gif'; return true;"><br>
+<b>Frog Suit</b><br>
+The Frog suit is a rare powerup that allows Mario to swim underwater with greater ease and dexterity while jumping higher on land. A GREAT BARGAIN!<br><br>
+65 coins.
+<form>
+<input type="text" name="q" value="1" size=3 maxlength=3>
+<input type="button" onClick="addToCart(3, q.value)" value="Add To Cart">
+<br></form>
+</td>
+
+<td align="center" width=33%>
+<img name="tanooki" src="mariopics/tanookiitem.gif" height="64" width="64"
+onMouseOver="document.tanooki.src='mariopics/tanooki.gif'; return true;"
+onMouseOut="document.tanooki.src='mariopics/tanookiitem.gif'; return true;"><br>
+<b>Tanooki Suit</b><br>
+The Tanooki Suit is a rare enhanced version of the Raccoon outfit that allows Mario to become invincible and immobile for a few seconds while still allowing him to attack with his tail and fly.<br><br>
+70 coins.
+<form>
+<input type="text" name="q" value="1" size=3 maxlength=3>
+<input type="button" onClick="addToCart(4, q.value)" value="Add To Cart">
+<br></form>
+</td>
+
+<td align="center" width=33%>
+<img name="hammersuit" src="mariopics/hammersuit.gif" height="64"
+onMouseOver="document.hammersuit.src='mariopics/hammermario.gif'; return true;"
+onMouseOut="document.hammersuit.src='mariopics/hammersuit.gif'; return true;"><br>
+<b>Hammer Suit</b><br>
+The Hammer Suit is a rare outfit for Mario that gives him the ability to shield himself against fire attacks and throw infinite hammers that deal a significant amount of damage. Defeats Boom Boom in 1 hit! Can even knock out fireballs in fortresses!<br><br>
+70 coins.
+<form>
+<input type="text" name="q" value="1" size=3 maxlength=3>
+<input type="button" onClick="addToCart(5, q.value)" value="Add To Cart">
+<br></form>
+</td></tr>
+<tr>
+
+<td align="center" width=33%>
+<img name="up" src="mariopics/1up.gif" height="64" width="64"
+onMouseOver="document.up.src='mariopics/1uptext.gif'; return true;"
+onMouseOut="document.up.src='mariopics/1up.gif'; return true;"><br>
+<b>1 UP Mushroom</b><br>
+Gives Mario an extra life. While supplies last.<br><br>
+Suggested Retail <s>100 coins</s>!<br>
+BLOWOUT PRICE! 75 coins!<br>
+<form>
+<input type="text" name="q" value="1" size=3 maxlength=3>
+<input type="button" onClick="addToCart(6, q.value)" value="Add To Cart">
+<br></form>
+</td>
+
+<td align="center" width=33%>
+<img name="pwing" src="mariopics/pwing.gif" height="64" width="60"
+onMouseOver="document.pwing.src='mariopics/pwingmario.gif'; return true;"
+onMouseOut="document.pwing.src='mariopics/pwing.gif'; return true;"><br>
+<b>P Wing</b><br>
+An enhanced version of the Raccoon suit that allows Mario to fly without having to gain speed. Mario can fly at any time for any amount of time for the first level after using the P Wing, and then it becomes a regular raccoon suit.<br><br>
+
+95 coins<br>
+<form>
+<input type="text" name="q" value="1" size=3 maxlength=3>
+<input type="button" onClick="addToCart(7, q.value)" value="Add To Cart">
+<br></form>
+</td>
+
+<td align="center" width=33%>
+<img name="warp" src="mariopics/warpwhistle.gif" height="64"
+onMouseOver="document.warp.src='mariopics/warptornado.gif'; return true;"
+onMouseOut="document.warp.src='mariopics/warpwhistle.gif'; return true;"><br>
+<b>Warp Whistle</b><br>
+ULTRA RARE item. Allows Mario to jump from one world to another. SUPPLIES ARE LIMITED!<br><br>
+200 coins<br>
+<form>
+<input type="text" name="q" value="1" size=3 maxlength=3>
+<input type="button" onClick="addToCart(8, q.value)" value="Add To Cart">
+<br></form>
+</td>
+
+
+</tr></table>
+</html>

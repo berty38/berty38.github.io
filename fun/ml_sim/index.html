@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-574893-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-574893-4');
+</script>
+<title>Machine Learning Research Simulator</title>
+</head>
+
+<body>
+
+<h1 id="header" style="font-family:'Courier New'">Machine Learning Research Simulator</h1>
+
+<p style="font-family:'Courier New'">Version 0.0002a, <a href="http://berthuang.com">Bert Huang</a></p>
+
+<p id="terminal" style="font-family:'Courier New'"></p>
+
+<script>
+var terminal = document.getElementById("terminal");
+
+var i = 0;
+var text = "Starting learning optimization<br>";
+
+terminal.innerHTML = text;
+setInterval(loop, 100);
+
+var UPDATE = 0.05;
+var IMPROVE = 0.8;
+var MAX_LENGTH = 5000;
+var SCOOP = 0.01;
+var obj = Math.random() * 1000000;
+var valAcc = Math.random() * 0.3 + 0.5;
+var arXiv = 0;
+var prevLength = text.length;
+
+function loop() {
+    if (Math.random() < UPDATE) {
+        text = text.substring(0, prevLength);
+        text = text + "<br>Iteration " + i + "&nbsp;&nbsp;&nbsp;&nbsp;Objective: " + obj.toExponential(5) + "&nbsp;&nbsp;&nbsp;&nbsp;Validation Accuracy: " + Math.round(valAcc*1000)/1000;
+        prevLength = text.length;
+        text = text + "<br />New arXiv papers on competing methods: " + arXiv;
+        terminal.innerHTML = text;
+        i++;
+
+        if (Math.random() < IMPROVE) {
+            obj *= 1 - Math.pow(Math.random() / 2, 4);
+            valAcc = 1 - (1 - valAcc) * (1 - Math.pow(Math.random() / 2, 6));
+        } else {
+            obj *= 1 + Math.pow(Math.random() / 2, 6);
+            valAcc *= 1 - Math.pow(Math.random() / 2, 6);
+        }
+        if (Math.random() < SCOOP) {
+          arXiv++;
+        }
+        window.scrollTo(0,document.body.scrollHeight);
+    }
+}
+</script>
+
+</body>
+</html>

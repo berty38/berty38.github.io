@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link href="./style.css" rel="stylesheet" type="text/css">
+
+  <title>Project ideas for PGMs/SP</title>
+</head>
+
+<body>
+
+    <div id="contentdiv">
+      <p>Here are some <strike>half</strike> barely-baked project ideas based on recent papers I&#8217;ve read or things I&#8217;ve worked on recently:</p>
+
+<ul>
+<li>Extending <a href="http://ttic.uchicago.edu/~meshi/papers/soft_learn.pdf">Meshi et al. AISTATS 15</a>, which uses soft constraints to make inference easier during training of structured SVMs, perhaps by using the same soft constraint idea for maximum likelihood.</li>
+<li>Paired-dual learning for learning latent variable discrete MRF models (instead of HL-MRFs, extending <a href="http://people.cs.vt.edu/~bhuang/papers/bach-icml15.pdf">Bach et al. ICML15</a>). E.g., how does it compare to the convex dual of <a href="http://www.alexander-schwing.de/papers/SchwingEtAl_ICML2012.pdf">Schwing et al. ICML &#8217;12</a>?</li>
+<li>Understanding the MAX-SAT linear programming relaxation (extending <a href="http://people.cs.vt.edu/~bhuang/papers/bach-aistats15.pdf">Bach et al. AISTATS 15</a> and related work), analyzing the guarantees in log space and how they jive with the hardness guarantees of MAP inference</li>
+<li>Back-propagation to compute gradients of PGM parameters for approximate inference (for max-margin or max likelihood learning), similarly to <a href="http://arxiv.org/abs/1502.03240">Zheng et al., arXiv 15</a></li>
+<li>Analyzing non-convex learning objectives in graphical models (latent variable learning, learning with Bethe-like entropies) in the context of <a href="http://arxiv.org/pdf/1406.2572.pdf">Dauphin et al. NIPS 2014</a>&#8217;s analysis (and related work) of saddle points. Do these objectives also suffer from a saddle point problem?</li>
+<li>Extending <a href="http://people.cs.vt.edu/~bhuang/papers/london-icml15.pdf">London et al. ICML 15</a> (and related work) to optimize counting numbers for entropy approximations for the learning task itself, not just as a regularization</li>
+<li>Can the method of moments / spectral learning enable very fast learning for templated graphical models? (E.g., see the <a href="https://spectrallearning.github.io/icml2014/bib.html">bibliography</a> from the 2014 workshop.)</li>
+<li>Regularizing structured prediction models by explicitly penalizing long-range dependencies (see <a href="http://cogcomp.cs.illinois.edu/papers/SamdaniRo12.pdf">Samdani &amp; Roth ICML &#8217;12</a>, <a href="https://ix.cs.uoregon.edu/~lowd/icml14torkamani.pdf">Torkamani &amp; Lowd, ICML &#8217;13</a>, <a href="http://linqs.cs.umd.edu/basilic/web/Publications/2015/london:stability15/london-stability15.pdf">London et al. JMLR &#8217;16</a>)</li>
+<li>Exploring the relationship between logically-templated graphical models (e.g., MLNs) and causality. Are if-then potentials clues for causal relationships?</li>
+<li>AI search strategies for learning via searching (e.g., <a href="http://hunch.net/~jl/projects/reductions/searn/searn.pdf">Daumé III et al. MLJ &#8217;09</a>), or applying AI search strategies to structure learning via searching through structures</li>
+<li>Extending &#8220;grafting&#8221; (see, e.g., <a href="http://www.cs.cmu.edu/~nlao/publication/2010/2010.KDD.GLight.pdf">Zhu et al, KDD &#8217;10</a>) for structure learning in logically-templated graphical models (where there is a clearly defined space of feature functions given the observed variables)</li>
+</ul>
+
+<p>These ideas are not guaranteed to work or make sense.</p>
+
+    </div>
+
+</body>
+</html>

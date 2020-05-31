@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Optimization in Machine Learning, Spring 2018</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <base href="http://berthuang.com/courses/opt18/">
+
+    <link rel="stylesheet" href="./style.css">
+
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-574893-4', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+                <a href="#top" class="navbar-brand" style="color: lightslategray">
+          OptML<br />
+        </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a data-toggle="collapse" data-target="#navbar.in" href="#announcements">Announcements</a></li>
+                    <li><a data-toggle="collapse" data-target="#navbar.in" href="#description">Description</a></li>
+                    <li><a data-toggle="collapse" data-target="#navbar.in" href="#schedule">Schedule</a></li>
+                    <li><a data-toggle="collapse" data-target="#navbar.in" href="#policies">Policies</a></li>
+                    <li><a data-toggle="collapse" data-target="#navbar.in" href="#project">Project</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content container-fluid" style="max-width: 1024px;">
+
+        <div class="jumbotron">
+            <h1>Optimization in Machine Learning</h1>
+
+            <p>CS6804 Spring 2018</p>
+        </div>
+
+
+        <div class="row">
+            <h2>Class Projects</h2>
+
+            <p>The students in the courses contributed class projects that explored a variety of fascinating ideas related to optimization in machine learning. Here is a list of some of the projects they worked on.</p>
+
+            <ul class="list-group">
+
+                <li class="list-group-item">
+                    Sirui Yao, Siyu Mi, Yali Bian: <a href="http://www.yalibian.com/research/viso/">VISO: Visualize Optimization Algorithms for Objective Functions</a>
+                </li>
+
+                <li class="list-group-item">
+                    Reid Bixler: <a href="projects/PrivateSGD-ReidB-CS6804.pdf">Privacy-Secure Stochastic Gradient Descent</a>
+                </li>
+
+                <li class="list-group-item">
+                    Tyler H. Chang, Thomas C. H. Lux: <a href="http://people.cs.vt.edu/tchlux/OptNotes/FinalProject/FinalPaper.txt.html">Empirical Analysis, Evaluation, and Comparison of Convex Optimization Techniques</a>
+                </li>
+
+                <li class="list-group-item">
+                    Ryan Kingery, Chidubem Arachie, Ahmadreza Azizi, Ali Taleb Zadeh Kasgari: <a href="projects/selecting-neural-networks.pdf">Self-Selecting Neural Networks</a>
+                </li>
+
+                <li class="list-group-item">
+                    Spencer Jenkins: <a href="projects/Jenkins_Spencer_CS6804_FinalProject.ipynb">Visualizing Deep Neural Networks and Optimization Paths</a>
+                </li>
+
+                <li class="list-group-item">
+                    Stephen Lasky, Vartan Kesiz Abnousi, Yufeng Ma, Yanshen Yang: <a href="projects/minibatch.pdf">What's the Best Mini-batch? Empirical Study on Image Classification</a>
+                </li>
+
+                <li class="list-group-item">
+                    Afsayh Saquib: <a href="https://sites.google.com/vt.edu/cs6804-spr18-asaquib/home">Exploring Capsule Networks</a>
+                </li>
+
+                <li class="list-group-item">
+                    You Lu: <a href="projects/lu.pdf">A Projected Gradient Method for Inference in Markov Random Fields</a>
+                </li>
+
+                <li class="list-group-item">
+                    Abhishek Chauhan, Mukund Babu, Nischel Kandru, Sanket Lokegaonkar: <a href="projects/capsule.pdf">Empirical  Study  on  Convergence  of  Capsule  Networks  with  Various Hyperparameters</a>
+                </li>
+
+                <li class="list-group-item">
+                    Jacob Porter: <a href="projects/jsporter_bisulfite_alignment_ml_bayesian_optimization.pdf">Studying the Acquisition Function of Bayesian Optimization With Machine Learning With DNA Reads</a>
+                </li>
+
+                <li class="list-group-item">
+                    Jon Bunting: <a href="projects/optimizing-accent-classification.pdf">Optimizing an Accent Classification System</a>
+                </li>
+
+                <li class="list-group-item">
+                    Colin Shea-Blymyer: <a href="projects/shea-blymyer">A Tool Set for Finding Counterfactual Subsequences in a Time-Series</a>
+                </li>
+
+                <li class="list-group-item">
+                    Jiamin Wang: <a href="projects/wang.pdf">Improving the Performance of the Atomistic Machine Learning Package</a>
+                </li>
+
+                <li class="list-group-item">
+                    Mahesh Narayanamurthi: <a href="projects/Narayanamurthi.pdf">Applying machine learning to scientific computing problems</a>
+                </li>
+
+                <li class="list-group-item">
+                    Nannan Zhao: <a href="projects/zhao.pdf">Deduplication in container image storage systems: model and cost-optimization analysis</a>
+                </li>
+
+                <li class="list-group-item">
+                    Shengzhe Xu, Bo Shen, Jihoon Chung: <a href="projects/rethinking.pdf">Rethinking whether domain knowledge can help improve classification</a>
+                </li>
+
+                <li class="list-group-item">
+                    Xiaolong Wu: <a href="projects/tcnn.pdf">TCNN: A Tensor Convolutional Neural Network for Big Data Anomaly Detection</a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <a name="announcements"></a>
+
+        <div class="row">
+
+            <div class="section-header">
+                <h1>Announcements</h1>
+            </div>
+
+            <div class="section">
+
+                <ul class="list-group">
+                    <li class="list-group-item"><b>01/08/18</b> The course website/syllabus is now available in draft form. It will be made official on the first day of class, but it will also continue to evolve throughout the semester. Those who are interested in taking the course
+                        should attend the first class, where we will collect information to help us decide who should be force added.
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <a name="description"></a>
+
+        <div class="row">
+
+            <div class="section-header">
+                <h1>Description</h1>
+            </div>
+            <div class="section">
+
+                <p>Various forms of optimization play critical roles in machine learning methods. A majority of machine learning algorithms minimize empirical risk by solving a convex or non-convex optimization. Structured predictors solve combinatorial
+                    optimizations, and their learning algorithms solve hybrid optimizations. And new approaches for stochastic optimization have become integral in modern deep learning methodology.
+                </p>
+
+                <p>
+                    Students who take this course will study the latest knowledge and foundational concepts on optimization in machine learning, including theoretical analyses of optimization-based learning algorithms, theoretical bounds of discrete optimization for structured
+                    prediction, and recent discoveries about non-convex optimization methods.
+                </p>
+
+                <p>Class meets Tuesday and Thursday from 12:30 PM to 1:45 PM in the New Classroom Building (NCB) 110A.</p>
+
+                <ul class="list-group">
+                    <li class="list-group-item"><b>Instructor:</b><br/>
+                        <a href="http://berthuang.com">Bert Huang</a>, Assistant Professor of Computer Science<br/> Office hours: Tuesday 3:30pm&ndash;4:30pm, Thursday 2:00pm&ndash;3:00pm.<br/>
+                        <a href="mailto:bhuang@vt.edu">bhuang@vt.edu</a></li>
+                    <!-- <li class="list-group-item"><b>Teaching Assistant:</b><br/>
+
+                        <a href="">TBA</a><br/> Office hours: TBA
+                        <br/>
+                        <a href="mailto:">TBA</a><br/>
+
+                    </li> -->
+                </ul>
+
+                <p>The course homepage (this page) is at <a href="http://berthuang.com/courses/opt18/">http://berthuang.com/courses/opt18/</a>.</p>
+
+                <p>The course Canvas site is at <a href="https://canvas.vt.edu/courses/66045">https://canvas.vt.edu/courses/66045</a> and should be visible to all users with a Virginia Tech login.</p>
+
+                <h2 id="prerequisites">Prerequisites and Accommodations</h2>
+
+                <p>Students must have taken CS5824 Advanced Machine Learning, or they must obtain the instructor’s permission if they have an equivalent background.</p>
+
+                <p>Please speak with the instructor if you are concerned about your background. Note: If any student needs special accommodations because of any disabilities, please contact the instructor during the first week of classes.</p>
+
+                <h2 id="objectives">Learning Objectives</h2>
+
+                <p>A student who successfully completes this class should</p>
+
+                <ul>
+                    <li>know about the classical optimization techniques used in machine learning throughout its history;</li>
+                    <li>understand some of the important, known theoretical guarantees about particular optimization techniques in the context of machine learning;</li>
+                    <li>have read and analyzed the latest optimization concepts in machine learning research;</li>
+                    <li>and have a foundational understanding of optimization methods to be able to comprehend new research on optimization.</li>
+                </ul>
+
+                <h2 id="topics">Topics</h2>
+
+                <p>We will aim to cover the following topics.</p>
+
+                <ul>
+                    <li>Gradient descent, strong convexity, stochastic gradient descent, back-propagation, Nesterov’s accelerated gradient, stochastic methods and local optima, subgradient method</li>
+
+                    <li>Interior point methods, quadratic programming, quadratically-constrained quadratic programming, semi-definite programming</li>
+
+                    <li>Newton’s method, coordinate descent, quasi-Newton methods, proximal methods</li>
+
+                    <li>Duality, Lagrangian duality, Fenchel duality, alternating direction method of multipliers</li>
+
+                    <li>Adaptive gradient methods, adagrad, Adam</li>
+
+                    <li>Discrete optimization, linear programs, submodularity, cutting-plane methods, structured prediction, convex-concave procedure</li>
+
+                    <li>Natural gradients, Bayesian optimization, meta-learning, parallelization for optimization</li>
+                </ul>
+
+            </div>
+        </div>
+
+        <a name="schedule"></a>
+
+        <div class="row">
+
+            <div class="section-header">
+                <h1>Schedule</h1>
+            </div>
+
+            <div class="section">
+                <iframe style="width: 675px; height: 500px;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQhjwzIa-e3IhSLZnxW9AAtdfKoRIM1Q7Of5Bo1x1SLgelMDg--_VXnlJpIzO6m5p6ZvhtsGZaQ39Mp/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+
+                <p>(Or click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQhjwzIa-e3IhSLZnxW9AAtdfKoRIM1Q7Of5Bo1x1SLgelMDg--_VXnlJpIzO6m5p6ZvhtsGZaQ39Mp/pubhtml?gid=0&single=true">here</a>                    if the embedding is not working.)</p>
+            </div>
+        </div>
+
+        <a name="policies"></a>
+
+        <div class="row">
+
+            <div class="section-header">
+                <h1>Policies</h1>
+            </div>
+            <div class="section">
+
+                <h4 id="academicintegrity">Academic Integrity</h4>
+
+                <p>The tenets of the Virginia Tech's Honor Codes will be strictly enforced in this course, and all assignments shall be subject to the stipulations of the Undergraduate and Graduate Honor Codes. For more information on the Graduate Honor
+                    Code, please refer to the GHS Constitution at <a href="http://ghs.graduateschool.vt.edu">http://ghs.graduateschool.vt.edu</a>. The Undergraduate Honor Code pledge that each member of the university community agrees to abide by states:
+                    "As a Hokie, I will conduct myself with honor and integrity at all times. I will not lie, cheat, or steal, nor will I accept the actions of those who do." A student who has doubts about how the Undergraduate Honor Code applies to any
+                    assignment is responsible for obtaining specific guidance from the course instructor before submitting the assignment for evaluation. Ignorance of the rules does not exclude any member of the University community from the requirements
+                    and expectations of the Honor Code. For additional information about the Undergraduate Honor Code, please visit:
+                    <a href="https://www.honorsystem.vt.edu/">https://www.honorsystem.vt.edu/</a></p>
+
+                <p>This course will have a zero-tolerance philosophy regarding plagiarism or other forms of cheating. Your homework assignments must be your own work, and any external source of code, ideas, or language must be cited to give credit to the
+                    original source. I will not hesitate to report incidents of academic dishonesty to the graduate school or honor system.</p>
+
+                <h4 id="principles">Principles of Community</h4>
+
+                <p>Because the course will include in-class discussions, we will adhere to Virginia Tech's <a href="http://inclusive.vt.edu/vtpoc0.html">Principles of Community</a>. The first two principles are most relevant:</p>
+
+                <ul>
+                    <li>We affirm the inherent dignity and value of every person and strive to maintain a climate for work and learning based on mutual respect and understanding.</li>
+                    <li>We affirm the right of each person to express thoughts and opinions freely. We encourage open expression within a climate of civility, sensitivity, and mutual respect.</li>
+                </ul>
+
+                <p>The remaining principles are also important and we will take them seriously as a class.</p>
+
+                <h4 id="gradingbreakdown">Grading Breakdown</h4>
+
+                <ul>
+                    <li>5%: Homework 0</li>
+                    <li>25%: Discussion leading</li>
+                    <li>20%: Takeaway summaries</li>
+                    <li>25%: Blog posts</li>
+                    <li>25%: Final project</li>
+                </ul>
+
+                <p>Based on the grading breakdown above, each student's final grade for the course will be determined by the final percentage of points earned. The grade ranges are as follows: </p>
+
+                <table>
+                    <tr>
+                        <td><b>A</b>:</td>
+                        <td>93.3%&ndash;100%&nbsp;</td>
+                        <td><b>A-</b>:</td>
+                        <td>90.0%&ndash;93.3%&nbsp;</td>
+                        <td><b>B+</b>:</td>
+                        <td>86.6%&ndash;90.0%&nbsp;</td>
+                        <td><b>B</b>:</td>
+                        <td>83.3%&ndash;86.6%&nbsp;</td>
+                        <td><b>B-</b>:</td>
+                        <td>80.0%&ndash;83.3%&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><b>C+</b>:</td>
+                        <td>76.6%&ndash;80.0%&nbsp;</td>
+                        <td><b>C</b>:</td>
+                        <td>73.3%&ndash;76.6%&nbsp;</td>
+                        <td><b>C-</b>:</td>
+                        <td>70.0%&ndash;73.3%&nbsp;</td>
+                        <td><b>D+</b>:</td>
+                        <td>66.6%&ndash;70.0%&nbsp;</td>
+                        <td><b>D</b>:</td>
+                        <td>63.3%&ndash;66.6%&nbsp;</td>
+                        <td><b>D-</b>:</td>
+                        <td>60.0%&ndash;63.3%&nbsp;</td>
+                        <td></td>
+                        <td></td>
+                        <td><b>F</b>:</td>
+                        <td>00.0%&ndash;60.0%&nbsp;</td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+
+
+    </div>
+    <footer class="footer">
+        <div style="height: 500px;"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <p class="text-muted">Disclaimer: This syllabus details the plans for the course, which are subject to change. I will make sure any changes are clearly announced and will always be intended for your benefit.</p>
+
+                    <p class="text-muted">For visitors outside the course: you are welcome to use the course materials for educational purposes. Do not sell any of this content.</p>
+
+                </div>
+            </div>
+        </div>
+
+
+    </footer>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>

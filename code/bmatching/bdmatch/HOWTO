@@ -1,0 +1,118 @@
+Code for Loopy Belief Propagation for Maximum Weight bd-Matching
+Copyright 2008 Bert Huang bert@cs.columbia.edu
+
+************************************************************************
+This code is a development version and is provided as is with no 
+guarantees about the accuracy of its output. This software is currently
+released under the GNU General Public License 
+http://www.gnu.org/copyleft/gpl.html
+
+If you use this code in research for publication, please cite the paper 
+"Loopy Belief Propagation for Bipartite Maximum Weight b-Matching" by 
+Bert Huang and Tony Jebara. 
+
+Please provide feedback if you have any questions or suggestions.
+************************************************************************
+
+
+Included files:
+Makefile
+bdmatch.h
+bdmatch.c
+bp.c
+quickselect.c
+README
+bdmatchwrapper.m
+
+COMPILING
+
+The Makefile is configured for compilation using gcc. Type "make all".
+
+
+USAGE: bdmatch [-arg1 val] [-arg2 val] [..]
+
+Flags:
+
+	-w [filename]	Weight file
+	-d [filename]	Degree file
+	-o [filename]	Output file
+	-i [integer]	Maximum iterations (default 1000)
+	-damp [float]	Damping proportion (default 1)
+	-h		Help
+	-s [0 1]	Sparse input (default 1. 0 NOT IMPLEMENTED YET)
+	-t [integer] 	Number of threads (default 4)
+	-v [0 1 2]	Verbose (default 1)
+
+
+Sparse format should have 'N nnz' as first line
+
+
+Copyright 2008 Bert Huang
+
+
+INPUT WEIGHT FILE FORMAT
+
+The bdmatch program currently expects the weight file to be in sparse 
+ijw format. The first line of the weight file should list the number of 
+nodes in the graph and the number of non-zero entries in the matrix. The 
+following lines should list the endpoints and the weight of an edge.
+
+Example file:
+
+10 90
+1 2 .4
+1 3 .6
+...
+
+INPUT DEGREE FILE FORMAT
+
+The degree format lists the lower and upper bounds for each node in order.
+
+Example file:
+
+4 4
+5 8
+0 9
+...
+
+
+EXAMPLE USAGE
+
+Example input files are included in the Example subdirectory.
+Run bdmatch with the following command:
+
+./bdmatch -w Example/weights.txt -d Example/deg.txt -o Example/out.txt -i 10000 -damp .8 -t 2 -v 1
+
+The example problem provided is one that should not converge, but we can
+obtain the approximate solution by either early-stopping (by choosing
+maximum iterations with -i) and/or damping (with -damp). Also the
+output file contains the log-beliefs, which can be used to pull out
+an approximate solution using other logic than the default method, which
+is to greedily choose edges to maximize belief but satisfy the row
+constraints. When BP has not converged, this strategy often results in
+column constraints being unsatisfied. 
+
+
+MATLAB INTERFACE
+
+A matlab utility function, bdmatchwrapper.m, is included that converts to 
+the proper file format and runs the bdmatch tool. 
+
+
+NOTES:
+
+- The algorithm is guaranteed for bipartite graphs when there is a unique 
+solution. Otherwise, it is only an approximation algorithm. We find the 
+approximations to be fairly accurate.
+- Non-sparse input format is currently not implemented, but the MATLAB 
+interface takes a sparse or non-sparse matrix and converts it to the sparse
+format.
+- This is a generalization of the algorithm described in the paper "Loopy
+Belief Propagation for Bipartite Maximum Weight b-Matching", but by setting
+all the lower bounds and upper bounds to the same value, you get exactly 
+the same algorithm.
+
+1/19/2009 - fixed Makefile to link to math and pthread libraries.
+
+Last modified on 
+Mon Jan 19 16:54:04 EST 2009

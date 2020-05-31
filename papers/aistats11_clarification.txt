@@ -1,0 +1,5 @@
+Clarification on Sufficient Selection BP running time:
+
+The original wording of the abstract for Fast b-Matching with Sufficient Selection Belief Propagation is misleading about the running time of the algorithm. I have updated the pdf on my homepage with clarified wording emphasizing that the O(n^2.5) running time is not a rigorous bound. Since each iteration is dominated by the selection operation, and the selection operation, under the independent ordering assumption, is expected to be solvable in sqrt(n) time, it's natural to expect the total running time to take O(n^2.5) time. 
+
+However, as was indicated in the main text but not clarified in the paper's abstract and introduction, this is not proven because the messages necessarily become dependent during the loopy message passing of belief propagation, so it remains future work to prove whether the expected running time of randomly ordered messages and weights carries over into inner iterations of belief propagation. We conjecture that this is true with high-probability when the weights are randomly ordered, but this is based on empirical experience, not theory.

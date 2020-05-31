@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Causal Reasoning, Spring 2020</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <base href="http://courses.cs.vt.edu/cs5824/Fall19/">
+
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-574893-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-574893-4');
+    </script>
+
+
+</head>
+
+<body>
+
+    <div class="content container-fluid" style="max-width: 1024px;">
+
+        <div class="jumbotron">
+            <h1>Causal Reasoning</h1>
+
+            <p>CS6804 Spring 2020</p>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Description</h2>
+
+                <p>This course will introduce the concepts underlying causal modeling.
+                Important machine learning scientists have long argued that much of the progress in machine learning has been limited to function approximation.
+                Popular learning algorithms fit models to data, but have no inherent understanding of the phenomena that generate the data.
+                Instead, these scientists argue, smarter algorithms need to reason about causality:
+                which variables cause change in other variables.
+                In this course, we will explore together the state of knowledge on causal modeling approaches and identify whether there is indeed
+                hope for smarter artificial intelligence through this concept.</p>
+
+                <p>Class meets Monday and Wednesday from 4:00 PM to 5:15 PM in 218 McBryde Hall.</p>
+
+                <p>To request a force-add, fill out this form: <a href="https://docs.google.com/forms/d/e/1FAIpQLSfsJRGHbQWKwnHrAfmUKba85AbFC18LxTlLt5-ZgL7C2bd4-g/viewform?usp=pp_url">https://docs.google.com/forms/d/e/1FAIpQLSfsJRGHbQWKwnHrAfmUKba85AbFC18LxTlLt5-ZgL7C2bd4-g/viewform?usp=pp_url</a> during the first class (before 5:15 PM on 01/22/20).</p>
+
+                <ul class="list-group">
+                    <li class="list-group-item"><b>Instructor:</b><br/>
+                        <a href="http://berthuang.com">Bert Huang</a>, Assistant Professor of Computer Science<br/> Office hours: TBA, Torgersen Hall 3160L<br/>
+                        <a href="mailto:bhuang@vt.edu">bhuang@vt.edu</a></li>
+                </ul>
+
+                <p>The course homepage (this page) is at <a href="http://people.cs.vt.edu/~bhuang/courses/causal20/">
+                  http://people.cs.vt.edu/~bhuang/courses/causal20/</a>.</p>
+
+                <p>The course Canvas site is at <a href="https://canvas.vt.edu/courses/104646">
+                  https://canvas.vt.edu/courses/104646</a>.</p>
+
+
+                <h3 id="topics">Topics</h3>
+
+                <ul>
+                    <li>Independent mechanisms</li>
+                    <li>Structural causal models</li>
+                    <li>Interventions</li>
+                    <li>Counterfactuals</li>
+                    <li>Structure identifiability</li>
+                    <li>Graphical models</li>
+                    <li>Multivariate causal models</li>
+                    <li>Hidden variables</li>
+                </ul>
+
+                <h3 id="prerequisites">Prerequisites</h3>
+
+                <p>Students in this course should have previously studied machine learning and/or artificial intelligence, graph analysis,
+                  analysis of algorithms, and basic statistics and probability.</p>
+
+                <p>Please speak with the instructor if you are concerned about your background. Note: If any student needs special accommodations because of any disabilities, please contact the instructor during the first week of classes.</p>
+
+                <h3 id="objectives">Learning Objectives</h3>
+
+                <p>A student who successfully completes this class should</p>
+
+                <ul>
+                    <li>gain exposure to the core concepts underlying causal modeling;</li>
+                    <li>be aware of established algorithms and solvable problems in causal reasoning;</li>
+                    <li>have analyzed algorithms for causal discovery and reasoning;</li>
+                    <li>be aware of the open problems in the topic of causal reasoning;</li>
+                    <li>and have experience reading about an advanced research topic;</li>
+                </ul>
+
+
+                <h3 id="readingandmaterials">Reading and Materials</h3>
+
+                <ul>
+                    <li>Our main readings will be from <i>Elements of Causal Inference</i> by Jonas Peters, Dominik Janzing, and Bernhard Scholkopf. MIT Press.
+                      A digital open-access copy available for free from the <a href="https://mitpress.mit.edu/books/elements-causal-inference">publisher's page</a>.</li>
+                    <li>Additional materials may be provided electronically, including readings, video lectures, and other media.</li>
+                </ul>
+
+
+                <a name="schedule"></a>
+
+                <h3>Schedule</h3>
+
+                <p>The class schedule is available <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRewan9DPmPSxn3qu-I5N30Iyp9v9ieyqzVbDphI2irpGMSIu81snsJmLFdk6LeUyBCfJRu4Rgv-d9H/pubhtml?gid=0&single=true">here</a> and is embedded below.
+                    We will update the schedule regularly.</p>
+
+                <div class="embed-responsive embed-responsive-16by9">
+                      <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRewan9DPmPSxn3qu-I5N30Iyp9v9ieyqzVbDphI2irpGMSIu81snsJmLFdk6LeUyBCfJRu4Rgv-d9H/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+                </div>
+
+                <h3 id="summaries">Takeaway Summaries</h3>
+
+                <p>Each student will be required to read the assigned text and submit a summary of the reading before class begins. These summaries should be between four and 10 sentences long,
+                  covering the important points of the reading. The summaries should not go into fine detail, but they should highlight things you believe are important to discuss in class, where we will examine the reading in detail.</p>
+
+                <h3 id="leading">Leading Classes</h3>
+
+                <p>Each student will be required to lead our discussion during one class session during the semester. Class leaders will be responsible for:</p>
+
+                <ul>
+                  <li>Summarizing the reading,</li>
+                  <li>Discussing questions from the class,</li>
+                  <li>And leading the class in trying to solve exercises from the reading.</li>
+                </ul>
+
+                <p>Students are not expected to "teach" the topics from the reading. We will all learn the concepts together as a class.
+                  Therefore it is okay and encouraged for students to highlight questions or passages in the reading they want help understanding.</p>
+
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+
+                <h2>Policies</h2>
+
+                <h3 id="accessibility">Accessibility</h3>
+
+                <p>If any student needs special accommodations because of any disabilities, please contact the instructor during the first week of classes. Such students are encouraged to work with
+                    <a href="https://www.ssd.vt.edu">
+          The Office of Services for
+      Students with Disabilities</a> to help coordinate accessibity arrangements.</p>
+
+                <h3 id="gradingscale">Grading</h3>
+
+
+                <ul>
+                    <li>20%: Class attendance</li>
+                    <li>60%: Takeaway summaries</li>
+                    <li>20%: Class leading</li>
+                </ul>
+
+                <p>Based on the grading breakdown above, each student's final grade for the course will be determined by the final percentage of points earned. The grade ranges are as follows: </p>
+
+                <table>
+                    <tr>
+                        <td><b>A:</b></td>
+                        <td>93.3%&ndash;100%,</td>
+                        <td><b>A-:</b></td>
+                        <td>90.0%&ndash;93.3%,</td>
+                        <td><b>B+:</b></td>
+                        <td>86.6%&ndash;90.0%,</td>
+                        <td><b>B:</b></td>
+                        <td>83.3%&ndash;86.6%,</td>
+                        <td><b>B-:</b></td>
+                        <td>80.0%&ndash;83.3%,</td>
+                        <td><b>C+:</b></td>
+                        <td>76.6%&ndash;80.0%,</td>
+                    </tr>
+                    <tr>
+
+                        <td><b>C:</b></td>
+                        <td>73.3%&ndash;76.6%,</td>
+                        <td><b>C-:</b></td>
+                        <td>70.0%&ndash;73.3%,</td>
+                        <td><b>D+:</b></td>
+                        <td>66.6%&ndash;70.0%,</td>
+                        <td><b>D:</b></td>
+                        <td>63.3%&ndash;66.6%,</td>
+                        <td><b>D-:</b></td>
+                        <td>60.0%&ndash;63.3%,</td>
+                        <td><b>F:</b></td>
+                        <td>00.0%&ndash;60.0%.</td>
+                    </tr>
+                </table>
+
+                <h3 id="attendance">Class Attendance</h3>
+
+                <p>All students are expected to attend all lectures unless they have given sufficient notice for justifiable absences. Absence will be excused for reasons including health needs, conference travel,
+                  family emergencies, and job-search interviews.</p>
+
+                <p>We will take attendance at random to save class time and to encourage attendance by exploiting probability.
+                  In each class session, we will draw a random whole number (using <a href="http://random.org">random.org</a>) between 1 and 10.
+                  If that number is <b>1</b>, we will take full-class attendance.
+                  Thus, for each class you miss without a valid reason, you will be penalized with 0.1 probability.
+                  In expectation, we will only take attendance two or three times all semester.
+                  Thus, missing any one of these attendance days could greatly affect your grade.</p>
+
+                <p>Retroactive permission will be granted for emergencies if you miss class on an attendance day but had a valid reason that you were unable to notify about (e.g., health reasons).</p>
+
+                <h3 id="academicintegrity">Academic Integrity</h3>
+
+                <p>Students enrolled in this course are responsible for abiding by the Graduate Honor Code. Ignorance of the rules does not exclude any member of the University community from the requirements and expectations of the Honor Code. For additional
+                    information about the Honor Code, please visit:
+                    <a href="https://graduateschool.vt.edu/academics/expectations/graduate-honor-system.html">https://graduateschool.vt.edu/academics/expectations/graduate-honor-system.html</a></p>
+
+                <p>This course will have a zero-tolerance philosophy regarding plagiarism or other forms of cheating. Your homework assignments must be your own group's work, and any external source of code, ideas, or language must be cited to give credit
+                    to the original source. I will not hesitate to report incidents of academic dishonesty to the Graduate Honor System.</p>
+
+                <h3 id="principles">Principles of Community</h3>
+
+                <p>Because the course will include in-class discussions, we will adhere to Virginia Tech's <a href="http://inclusive.vt.edu/vtpoc0.html">Principles of Community</a>. The first two principles are most relevant:</p>
+
+                <ul>
+                    <li>We affirm the inherent dignity and value of every person and strive to maintain a climate for work and learning based on mutual respect and understanding.</li>
+                    <li>We affirm the right of each person to express thoughts and opinions freely. We encourage open expression within a climate of civility, sensitivity, and mutual respect.</li>
+                </ul>
+
+                <p>The remaining principles are also important and we will take them seriously as a class.</p>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container-fluid" style="max-width: 1024px;">
+        <footer class="footer">
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <hr>
+
+                    <p class="text-muted">Disclaimer: This syllabus details the plans for the course, which are subject to change. I will make sure any changes are clearly announced and will always be intended for your benefit.</p>
+
+                    <p class="text-muted">For visitors outside the course: you are welcome to use the course materials for educational purposes. Do not sell any of this content.</p>
+
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- <script>
+        /**
+         * Shuffles array in place.
+         * @param {Array} a items An array containing the items.
+         * Code from https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
+         */
+        function shuffle(a) {
+            var j, x, i;
+            for (i = a.length - 1; i > 0; i--) {
+                j = Math.floor(Math.random() * (i + 1));
+                x = a[i];
+                a[i] = a[j];
+                a[j] = x;
+            }
+            return a;
+        }
+
+        $(document).ready(function() {
+            var assistants = [
+                $("#TA1").html(),
+                $("#TA2").html(),
+                $("#TA3").html()
+            ]
+
+            shuffle(assistants);
+
+            $("#TA1").html(assistants[0]);
+            $("#TA2").html(assistants[1]);
+            $("#TA3").html(assistants[2]);
+        })
+    </script> -->
+
+</body>
+
+</html>

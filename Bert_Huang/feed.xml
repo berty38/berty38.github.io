@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ <id>urn:iweb:B328335A-21F1-450A-A79C-31B7832C0E1B</id>
+ <title>Page list Atom feed</title>
+ <updated>2017-03-28T13:07:47-04:00</updated>
+ <link rel="self" href="feed.xml"/>
+ <generator>iWeb</generator>
+ <author>
+  <name>iWeb</name>
+ </author>
+ <entry>
+  <id>urn:iweb:C9D52BAD-1434-45E6-B201-2B752D7F8DB1</id>
+  <title>Home</title>
+  <title xmlns="urn:iweb:">Home</title>
+  <in-navbar xmlns="urn:iweb:">C9D52BAD-1434-45E6-B201-2B752D7F8DB1</in-navbar>
+  <link rel="alternate" href="Home.html"/>
+  <updated>2017-03-28T13:07:47.001-04:00</updated>
+  <content>Home</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:18A52648-6728-4401-B01E-3F4A551C2546</id>
+  <title>Blog</title>
+  <title xmlns="urn:iweb:">Blog</title>
+  <in-navbar xmlns="urn:iweb:">18A52648-6728-4401-B01E-3F4A551C2546</in-navbar>
+  <link rel="alternate" href="Blog.html"/>
+  <updated>2017-03-28T13:07:47.002-04:00</updated>
+  <content>Blog</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:08462F58-2F7C-41C2-9F25-817DB5E3E692</id>
+  <title>Research</title>
+  <title xmlns="urn:iweb:">Research</title>
+  <in-navbar xmlns="urn:iweb:">08462F58-2F7C-41C2-9F25-817DB5E3E692</in-navbar>
+  <link rel="alternate" href="Research.html"/>
+  <updated>2017-03-28T13:07:47.003-04:00</updated>
+  <content>Research</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:D169A924-88E1-4D1F-A098-035CB33AACE8</id>
+  <title>Teaching</title>
+  <title xmlns="urn:iweb:">Teaching</title>
+  <in-navbar xmlns="urn:iweb:">D169A924-88E1-4D1F-A098-035CB33AACE8</in-navbar>
+  <link rel="alternate" href="Teaching.html"/>
+  <updated>2017-03-28T13:07:47.004-04:00</updated>
+  <content>Teaching</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:92D174AF-136E-4FD8-9A47-6D1A5B399F4D</id>
+  <title>Hobbies</title>
+  <title xmlns="urn:iweb:">Hobbies</title>
+  <in-navbar xmlns="urn:iweb:">92D174AF-136E-4FD8-9A47-6D1A5B399F4D</in-navbar>
+  <link rel="alternate" href="Hobbies.html"/>
+  <updated>2017-03-28T13:07:47.005-04:00</updated>
+  <content>Hobbies</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:E2621B95-6E5A-448B-8187-1AC23B195835</id>
+  <title>Links</title>
+  <title xmlns="urn:iweb:">Links</title>
+  <in-navbar xmlns="urn:iweb:">E2621B95-6E5A-448B-8187-1AC23B195835</in-navbar>
+  <link rel="alternate" href="Links.html"/>
+  <updated>2017-03-28T13:07:47.006-04:00</updated>
+  <content>Links</content>
+ </entry>
+</feed>

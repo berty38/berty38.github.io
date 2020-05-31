@@ -1,0 +1,19 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><head><title>Belief Propagation for b-Matching</title><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><body><script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script><script type="text/javascript">var pageTracker = _gat._getTracker("UA-574893-1");pageTracker._trackPageview();
+</script>
+
+<h1>LATEST VERSION, 2/2011</h1>
+
+<p>Here is the latest version of belief propagation for b-matching, which uses fast belief updates, handles
+function-based weights so you don't have to store the full weight matrix in memory and
+and includes a mex interface to the b-matching library. See the <a href="./BMatchingSolver/README.txt">README</a> for more info.<p>
+
+<p><a href = "./BMatchingSolver/">Code Directory</a></p><p><a href = "./BMatchingSolver.tar.gz">BMatchingSolver.tar.gz</a></p>
+
+<p>The old versions can be accessed below</p>
+
+<h1>UPDATED VERSION (2008)</h1><p>Here is some new[er but old now] code to do bd-matching with different degreeconstraints on each node. New features include user set parameters formaximum iterations, damping. The new code operates on full graphs soit can be used as an approximation for bd-matching on unipartitegraph. See the <a href="./bdmatch/README">README</a> for more info.</p><p><a href = "./bdmatch/">Code Directory</a></p><p><a href = "./bdmatch.tar.gz">bdmatch.tar.gz</a></p>
+
+<h1>ORIGINAL VERSION (2007)</h1>
+<p>Here is the [old] code along with some documentation forb-matching. The code is in C, but I include a MATLAB version and aMATLAB interface for the C version. I also include pre-compiled Windows, Linux, and Mac OS X binaries.</P><p> Send me email if you have any questions. bert@cs.columbia.edu</p><p><a href = "./bpbmatch.tgz">bpbmatch.tgz</a></p>
+
+<p><a href="http://www.cs.columbia.edu/~bert/">Back to homepage.</a></p><body></html>
