@@ -1,0 +1,38 @@
+body {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.section {
+  margin-top: 5px;
+  background-color: white;
+}
+
+#news {
+  height: 260px;
+  overflow-y: scroll;
+}
+
+.section-header {
+  margin-top: 10px;
+  position: relative;
+}
+
+.section-title {
+  position: absolute;
+  bottom: 2%;
+  left: 2%;
+  width: 100%;
+}
+
+.section-title-white {
+  color: white;
+}
+
+a.anchor {
+  display: block;
+  position: relative;
+  top: -100px;
+  visibility: hidden;
+}
