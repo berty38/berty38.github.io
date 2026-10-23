@@ -9,6 +9,27 @@ body {
     background-color: ghostwhite;
 }
 
+.experience-list {
+    padding-left: 1.25rem;
+}
+
+.experience-list li {
+    display: grid;
+    grid-template-columns: minmax(10rem, 14rem) 1fr auto;
+    column-gap: 0.5rem;
+    align-items: baseline;
+    margin-bottom: 0.55rem;
+}
+
+.experience-role {
+    min-width: 0;
+}
+
+.experience-date {
+    color: #6c757d;
+    white-space: nowrap;
+}
+
 #news{
     height: 260px;
     overflow-y: scroll;
@@ -35,4 +56,63 @@ a.anchor {
     position: relative;
     top: -100px;
     visibility: hidden;
+}
+
+@media (max-width: 575px) {
+    html {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        padding-top: 82px;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .content.container-fluid {
+        width: auto;
+        max-width: 100% !important;
+        padding-left: 15px;
+        padding-right: 15px;
+        overflow-x: hidden;
+    }
+
+    .content .row {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .content .row > [class*="col-"] {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .content p {
+        overflow-wrap: break-word;
+    }
+
+    .experience-list li {
+        display: block;
+    }
+
+    .experience-role,
+    .experience-date {
+        display: block;
+        margin-top: 0.15rem;
+    }
+
+    .section-header {
+        margin-top: 72px;
+    }
+
+    a.anchor {
+        top: -82px;
+    }
 }
